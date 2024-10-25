@@ -26,7 +26,7 @@ def pixels_to_ascii(image):
 
 def main(new_width=100):
     # attempt to open image from user-input
-    path = input("Enter a valid pathname to an iamge:\n")
+    path = input("Enter a valid pathname to an image:\n")
     try:
         image = PIL.Image.open(path)
     except:
@@ -44,3 +44,6 @@ def main(new_width=100):
     # save result to "ascii_image.txt"
     with open("ascii_image.txt", "w") as f:
         f.write(ascii_image)
+
+if __name__ == "__main__":
+    main()
