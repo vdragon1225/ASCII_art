@@ -1,5 +1,6 @@
 import PIL.Image
-# ascii characters used to build the output text
+
+# ASCII characters used to build the output text
 ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 #ASCII_CHARS = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 
@@ -16,7 +17,7 @@ def grayify(image):
     grayscale_image = image.convert("L")
     return(grayscale_image)
 
-# convert pixels to a string of ascii characters
+# convert pixels to a string of ASCII characters
 def pixels_to_ascii(image):
     pixels = image.getdata()
     characters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
@@ -36,11 +37,11 @@ def main(new_width=100):
     # format
     pixel_count = len(new_image_data)
     ascii_image = "\n".join(new_image_data[i:(i+new_width)] for i in range(0, pixel_count, new_width))
- 
+
     # print result
     print(ascii_image)
 
-    # save result to "ascii_image.txt"
+    #save result to "ascii_image.txt"
     with open("ascii_image.txt", "w") as f:
         f.write(ascii_image)
 
