@@ -27,7 +27,7 @@ def main(new_width=100):
     path = input("Enter a valid pathname to an image:\n")
     try:
         image = PIL.Image.open(path)
-    except Exception as e:
+    except:
         print(path, "is not valid pathname to an image.")
 
     # convert image to ASCII
